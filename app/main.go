@@ -5,6 +5,7 @@ import (
 	"io"
 	"net"
 	"srbh117/myRedis_c/app/parser"
+	storagemodule "srbh117/myRedis_c/app/storageModule"
 	"strings"
 )
 
@@ -36,6 +37,17 @@ func handleTCP(conn net.Conn, curr_idx *int, buff *[]byte) {
 	}
 	if userInputSlice[0] == "PING" {
 		conn.Write([]byte("+PONG"))
+	}
+	if userInputSlice[0] == "SET" {
+		storagemodule.Set(userInputSlice)
+	}
+	if userInputSlice[0] == "GET" {
+		err, str := storagemodule.GET(userInputSlice[1])
+		if err != nil {
+			conn.Write([]byte(err.Error()))
+		} else {
+			conn.Write([]byte(str))
+		}
 	}
 
 }

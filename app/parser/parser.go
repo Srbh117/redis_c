@@ -16,6 +16,9 @@ func MyParser(userInput string) ([]string, error) {
 	curr_idx := 3 + len(SEPERATOR)
 	for LEN > 0 {
 		curr_string_len := int(userInput[curr_idx]) - int('0')
+		if curr_string_len == 0 {
+			return []string{}, fmt.Errorf("I DO NOT WANT EMPTY STRINGS!!!!!!!!")
+		}
 		curr_idx += len(SEPERATOR) + 1
 		next_idx := strings.Index(userInput[curr_idx:], SEPERATOR)
 

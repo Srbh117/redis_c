@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"srbh117/myRedis_c/app/parser"
+	"strconv"
 	"sync"
 	"time"
 )
@@ -15,6 +16,10 @@ type Entry struct {
 type KeyValue struct {
 	store   map[string]Entry
 	myLocks sync.RWMutex
+}
+
+var KV KeyValue = KeyValue{
+	store: make(map[string]Entry),
 }
 
 func SET(KeyValString string, TimeToExpireString string) error {
@@ -32,20 +37,46 @@ func SET(KeyValString string, TimeToExpireString string) error {
 		return fmt.Errorf("SET FUNCTIONALITY NOT REQUIRED | WRONG INPUT PROVIDED PLEASE CHECK STRING", KeyValList)
 	}
 
-	//SizeChecksfor KeyVal and TimeBound
-	//Since KeyVal-1==2*(TimeBound-1)
-
 	if len(KeyValList)-1 != 2*(len(TimeToExpireList)-1) {
 		return fmt.Errorf("Mismatch in Data. Not every KV comes up with an Expiry. Please Check")
 	}
+
+	fmt.Println(KeyValList, TimeToExpireList)
 	i := 1
 	j := 1
-	for i < len(KeyValList) && j < len(TimeToExpireList) {
 
-	}
+	func() {
+		KV.myLocks.Lock()
+		defer KV.myLocks.Unlock()
+		for i < len(KeyValList) && j < len(TimeToExpireList) {
+			timeVal, err := strconv.Atoi(TimeToExpireList[j])
+			if err != nil {
+				return
+			}
 
+			KV.store[KeyValList[i]] = Entry{KeyValList[i+1], time.Now().Add(time.Millisecond * time.Duration(timeVal))}
+
+			KV.store[KeyValList[i]] = Entry{KeyValList[i+1], time.Now().Add(time.Millisecond * time.Duration(timeVal))}
+
+			i += 2
+			j++
+		}
+	}()
+	fmt.Println(KV.store)
 	return nil
 
+}
+
+func GET(key string) (error, string) {
+	v, ok := KV.store[key]
+	if ok == false {
+		return fmt.Errorf("KEY DOES NOT EXIST"), ""
+	}
+	if time.Now().After(v.expiry) == true {
+		return fmt.Errorf("TIME ELAPSED, KEY EXPIRED"), ""
+	}
+
+	return nil, (KV.store[key].value)
 }
 
 func main() {
@@ -55,5 +86,12 @@ func main() {
 	if err != nil {
 		fmt.Print(err)
 	}
+
+	time.Sleep(5 * time.Second)
+	err, val := GET("key")
+	if err != nil {
+		fmt.Print(err)
+	}
+	fmt.Println(val)
 
 }

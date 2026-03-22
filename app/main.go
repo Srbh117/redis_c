@@ -4,33 +4,11 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"srbh117/myRedis_c/app/parser"
 	"strings"
 )
 
 var SEPERATOR string = "\r\n"
-
-func MyParser(userInput string) ([]string, error) {
-	if len(userInput) == 0 {
-		return []string{}, fmt.Errorf("NO STRING PROVIDED")
-	}
-	var LEN int = int(userInput[1]) - int('0')
-	userInputSlice := make([]string, 0, LEN)
-	curr_idx := 3 + len(SEPERATOR)
-	for LEN > 0 {
-		curr_string_len := int(userInput[curr_idx]) - int('0')
-		curr_idx += len(SEPERATOR) + 1
-		next_idx := strings.Index(userInput[curr_idx:], SEPERATOR)
-
-		if next_idx != curr_string_len {
-			return []string{}, fmt.Errorf("BAD STRING FORMATTING, LENGTH OF STRING IS WRONG")
-		}
-		userInputSlice = append(userInputSlice, userInput[curr_idx:curr_idx+next_idx])
-		curr_idx = curr_idx + next_idx + len(SEPERATOR) + 1
-		LEN -= 1
-	}
-	return userInputSlice, nil
-
-}
 
 func handleTCP(conn net.Conn, curr_idx *int, buff *[]byte) {
 	defer conn.Close()
@@ -42,18 +20,23 @@ func handleTCP(conn net.Conn, curr_idx *int, buff *[]byte) {
 	if err != nil {
 		fmt.Errorf("Error Reading Conn Buff %v", err)
 	}
-	if string((*buff)[:n]) == "PING\n" {
-		conn.Write([]byte("+PONG\r\n"))
-		return
-	}
-	userInputString := string((*buff)[:n])
-	userInputSlice, err := MyParser(userInputString)
+
+	userInputString := strings.ReplaceAll(string((*buff)[:n]), "\r\n", "\n")
+	userInputString = strings.ReplaceAll(userInputString, "\n", "\r\n")
+
+	userInputSlice, err := parser.MyEasyParser(userInputString)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	fmt.Println("USERINPUTSLICE:\t", userInputSlice)
-	conn.Write([]byte(userInputSlice[1]))
+
+	if userInputSlice[0] == "ECHO" {
+		conn.Write([]byte(userInputSlice[1]))
+	}
+	if userInputSlice[0] == "PING" {
+		conn.Write([]byte("+PONG"))
+	}
 
 }
 

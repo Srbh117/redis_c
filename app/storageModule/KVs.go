@@ -12,6 +12,11 @@ type Entry struct {
 	expiry time.Time
 }
 
+type NewEntry struct {
+	value  interface{}
+	expiry time.Time
+}
+
 type KeyValue struct {
 	store   map[string]Entry
 	myLocks sync.RWMutex
@@ -19,6 +24,24 @@ type KeyValue struct {
 
 var KV KeyValue = KeyValue{
 	store: make(map[string]Entry),
+}
+
+func (Entry *NewEntry) LPush(value string) {
+	existingList, _ := Entry.value.([]string)
+
+	arr := []string{value}
+	arr = append(arr, existingList...)
+	Entry.value = arr
+}
+
+func (Entry *NewEntry) RPush(value string) {
+	existingList, ok := Entry.value.([]string)
+	if ok != true {
+		Entry.value = []string{}
+	}
+
+	existingList = append(existingList, value)
+	Entry.value = existingList
 }
 
 func Set(KeyValList []string) error {

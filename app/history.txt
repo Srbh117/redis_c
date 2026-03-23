@@ -1,0 +1,887 @@
+    1  clear
+    2  ls
+    3  exit
+    4  clear
+    5  ls
+    6  GitTuts
+    7  ls
+    8  man git branch
+    9  ls
+   10  cd Desktop
+   11  ls
+   12  cd work
+   13  ls
+   14  cd GitTuts/\
+   15  GitTuts
+   16  ls
+   17  clear
+   18  ls
+   19  git swtich -c add_classics
+   20  git switch -c add_classics
+   21  git branch
+   22  bootdev run 02f31255-f521-4317-946a-a8a9ca67e7cf -s
+   23  ^[[200~# For Linux/WSL
+   24  echo 'export PATH=$PATH:$HOME/.local/opt/go/bin' >> ~/.bashrc
+   25  # Next, reload your shell configuration
+   26  source ~/.bashrc~
+   27  # For Linux/WSL\necho 'export PATH=$PATH:$HOME/.local/opt/go/bin' >> ~/.bashrc\n# Next, reload your shell configuration\nsource ~/.bashrc
+   28  q
+   29  qqw
+   30  eqw
+   31  exit
+   32  ls
+   33  echo 'export PATH=$PATH:$HOME/.local/opt/go/bin' >> ~/.bashrc
+   34  source ~/.bashrc
+   35  go install github.com/bootdotdev/bootdev@latest
+   36  clear
+   37  qls
+   38  ls
+   39  q
+   40  exit
+   41  ls
+   42  bootdev
+   43  go install github.com/bootdotdev/bootdev@latest
+   44  bootdev
+   45  source ~/.zshrc
+   46  source ~/.bashrc
+   47  ls
+   48  cd Desktop
+   49  ls
+   50  cd work/
+   51  ls
+   52  cd GitTuts
+   53  ls
+   54  code .
+   55  sudo apt install code --classic
+   56  sudo snap install code --classic
+   57  code .
+   58  history
+   59  exit
+   60  bash
+   61  clear
+   62  export PATH=$PATH:$HOME/go/bin
+   63  clear
+   64  ls
+   65  bootdev run 02f31255-f521-4317-946a-a8a9ca67e7cf -s
+   66  clear
+   67  git checkout main
+   68  git branch
+   69  git switch add_classics
+   70  bootdev run 7b1f541b-a333-4ac0-8317-8165530c0998 -s
+   71  ls
+   72  touch classics.csv
+   73  vi classics.csv
+   74  clear
+   75  ls
+   76  git status
+   77  git add classics.csv
+   78  git commit -m "D: New Branch Created. Classics.CSV added"
+   79  git config --global user.email "srbh.jo314@gmail.com"
+   80  git config --global user.name "doja"
+   81  git commit -m "D: New Branch Created. Classics.CSV added"
+   82  git log
+   83  git switch main
+   84  git log
+   85  git switch add_classics
+   86  bootdev run da54c8cb-2b06-45ab-b8bb-157bc2446432
+   87  bootdev run da54c8cb-2b06-45ab-b8bb-157bc2446432 -s
+   88  git log
+   89  clear
+   90  ls
+   91  git log --decorate
+   92  git log --decorate=full
+   93  got log --oneline
+   94  git log --oneline
+   95  bootdev run 4c6ecd20-8510-4b37-918a-763fbade5e05 -s
+   96  ls
+   97  cd .git/refs
+   98  ls
+   99  cat heads
+  100  cd heads
+  101  ls
+  102  cat add_classics
+  103  git find d4c65b\
+  104  git find d4c65b
+  105  cd ...
+  106  cd ..]
+  107  cd ..
+  108  ls
+  109  find d4c6
+  110  find d4c6_
+  111  find cd .git/refs/heads
+  112  ls
+  113  cd .git/refs/heads
+  114  ls
+  115  git log --oneline
+  116  git cat-file -p ^[[200~d4c65b1~
+  117  git cat-file -p d4c65b1
+  118  git cat-file -p 97f139d287c269ab389ee11cee54a17a0adb05b3
+  119  git cat-file -p 14bf50928
+  120  clear
+  121  git switch main
+  122  cd ...
+  123  ls
+  124  cd ...
+  125  ls
+  126  cd GitTuts
+  127  LS
+  128  git switch main
+  129  git push -u origin main
+  130  ls
+  131  ls ~/.ssh
+  132  git push -u origin main
+  133  clea
+  134  clear
+  135  git push
+  136  git status
+  137  ls
+  138  cd ..
+  139  ls
+  140  touch .keys.md
+  141  vi .keys.md
+  142  nvim .keys.md
+  143  ls
+  144  code .
+  145  ls
+  146  ls -l
+  147  ls -l -R
+  148  find .keys
+  149  ls
+  150  code .
+  151  touch .gitignore
+  152  ls
+  153  cd ..
+  154  ls
+  155  cd ../Downloads
+  156  ls
+  157  sudo dpkg -i stremio_4.4.168-1_amd64.deb
+  158  sudo apt install node
+  159  sudo apt install nodejs
+  160  apt --fix-broken install
+  161  sudo apt --fix-broken install
+  162  sudo dpkg -i stremio_4.4.168-1_amd64.deb
+  163  sudo apt update
+  164  apt list --upgradable
+  165  sudo apt install nodejs libmpv1 qml-module-qt-labs-platform qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtwebchannel qml-module-qtwebengine qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings libfdk-aac2
+  166  stremio
+  167  sudo apt install nodejs qml-module-qt-labs-platform qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtwebchannel qml-module-qtwebengine qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings libfdk-aac2
+  168  apt --fix-broken install
+  169  sudo apt --fix-broken install
+  170  sudo apt install nodejs
+  171  sudo dpkg -i stremio_4.4.168-1_amd64.deb
+  172  sudo apt upgrade
+  173  sudo apt--fix-broken install
+  174  sudo apt --fix-broken install
+  175  sudo dpkg -i stremio_4.4.168-1_amd64.deb
+  176  sudo apt --fix-broken install
+  177  ^[[200~sudo apt install libmpv1 qml-module-qt-labs-platform qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtwebchannel qml-module-qtwebengine qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings libfdk-aac2~
+  178  sudo apt install libmpv1 qml-module-qt-labs-platform qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtwebchannel qml-module-qtwebengine qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings libfdk-aac2
+  179  ^[[200~sudo apt install libmpv2~
+  180  sudo apt install libmpv2
+  181  sudo dpkg -i stremio_4.4.168-1_amd64.deb
+  182  sudo apt install flatpak
+  183  apt --fix-broken install
+  184  sudo apt --fix-broken install
+  185  sudo apt install flatpak
+  186  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  187  stremio
+  188  flatpak install flathub com.stremio.Stremio
+  189  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  190  exit
+  191  docker run
+  192  sudo apt install docker
+  193  # Add Docker's official GPG key:\nsudo apt update\nsudo apt install ca-certificates curl\nsudo install -m 0755 -d /etc/apt/keyrings\nsudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc\nsudo chmod a+r /etc/apt/keyrings/docker.asc\n\n# Add the repository to Apt sources:\nsudo tee /etc/apt/sources.list.d/docker.sources <<EOF\nTypes: deb\nURIs: https://download.docker.com/linux/ubuntu\nSuites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")\nComponents: stable\nSigned-By: /etc/apt/keyrings/docker.asc\nEOF\n\nsudo apt update
+  194  docker run
+  195  sudo apt update
+  196  sudo apt upgrade
+  197  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  198  docker run
+  199  clear
+  200  docker run --name pg1 -e POSTGRES_USER=doja -e POSTGRES_PASSWORD=1 -p 5432:5432 -d postgres:latest
+  201  sudo docker run --name pg1 -e POSTGRES_USER=doja -e POSTGRES_PASSWORD=1 -p 5432:5432 -d postgres:latest
+  202  docker ps
+  203  sudo docker ps
+  204  sudo docker exec -it pg1 psql -U doja 
+  205  flatpak install flathub net.pcsx2.PCSX2
+  206  ls
+  207  cd Desktop
+  208  ls
+  209  cd work
+  210  ls
+  211  mkdir myCode
+  212  myCode
+  213  l
+  214  myCode
+  215  ls
+  216  clear
+  217  ls
+  218  mkdir queue_message
+  219  cd queue_message
+  220  code .
+  221  exit
+  222  ls
+  223  go mod init doja117
+  224  clear
+  225  ls
+  226  cat go.mod
+  227  clear
+  228  ls
+  229  touch main.go
+  230  ls
+  231  go run .
+  232  clear
+  233  go run .
+  234  nc -u localhost:8080
+  235  cat nc
+  236  nc
+  237  nc localhost 8080
+  238  ls
+  239  cd Desktop
+  240  ls
+  241  mkdir dojaspace && cd dojaspace
+  242  mkdir frontend
+  243  touch frotned/index.htnl
+  244  clear
+  245  ls
+  246  cd frontend
+  247  l
+  248  touch index.html
+  249  git init 
+  250  clear
+  251  ls
+  252  code .
+  253  cd ...
+  254  cd .
+  255  cd ..
+  256  cd Downloads
+  257  ls
+  258  chmod +x stremio_4.4.168-1_amd64.deb
+  259  ./stremio_4.4.168-1_amd64.deb
+  260  chmod +x SoulseekQt-2024-6-30\(1\).AppImage
+  261  ./SoulseekQt-2024-6-30\(1\).AppImage
+  262  sudo apt install vlc
+  263  c;ear
+  264  clear
+  265  ls
+  266  cd ...
+  267  ls
+  268  cd saurabh/Desktop
+  269  ls
+  270  cd dojaspace
+  271  ls
+  272  cd frontend
+  273  ls
+  274  as
+  275  assets
+  276  ls
+  277  music
+  278  vlc Kagefumi.mp3
+  279  git init\ngit add .\ngit commit -m "init: shell"
+  280  git commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/Srbh117/dojaspace.git\ngit push -u origin main
+  281  git status
+  282  clear
+  283  npm
+  284  sudo apt install node
+  285  curl -fsSL https://bun.com/install | bash
+  286  exec /usr/bin/zsh
+  287  bun
+  288  clear
+  289  ls
+  290  bun i -g wrangler
+  291  wrangler login
+  292  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash\n\n# in lieu of restarting the shell\n\. "$HOME/.nvm/nvm.sh"\n\n# Download and install Node.js:\nnvm install 24\n
+  293  node --version
+  294  wrangler login
+  295  ls
+  296  cd ...
+  297  ls
+  298  cd ..
+  299  ls
+  300  ls -lR
+  301  clear
+  302  ls
+  303  cd frontend
+  304  ls
+  305  rm -rf ./a
+  306  ls
+  307  rm -rf a.out
+  308  ls
+  309  touch wrangler.toml _worker.js
+  310  clear
+  311  wrangler deploy
+  312  echo "_worker.js" > .assetsignore
+  313  wrangler deploy
+  314  clear
+  315  ls
+  316  cd assets
+  317  ls
+  318  mkdir  images
+  319  cd images
+  320  ls
+  321  git commit -m "c1: Added Blogs"
+  322  git add .
+  323  git commit -m "Added Entries"
+  324  git push
+  325  ls
+  326  cd ..
+  327  cd ...
+  328  ls
+  329  cd frontend
+  330  history
+  331  wrangler deploy
+  332  clear
+  333  ls
+  334  cd ...
+  335  ls
+  336  cd dojaspace
+  337  ls
+  338  git clone https://git.codecrafters.io/9fdb2f7bc1c7d8f7 codecrafters-redis-go\ncd codecrafters-redis-go
+  339  clear
+  340  ls
+  341  clear
+  342  curl -fsSL https://codecrafters.io/install.sh | bash\ncodecrafters ping
+  343  clea
+  344  code .
+  345  clear
+  346  codecrafters submit
+  347  clear
+  348  sudo apt install gnome-tweaks gnome-shell-extension-manager git curl
+  349  cd ...
+  350  ls
+  351  cd ../Downloads
+  352  unzip Flat-Remix-Gruvbox-fullPanel.zip -d ~/.themes/
+  353  sudo apt install gnome-shell-extensions
+  354  sudo apt install gnome-shell-extension-manager
+  355  clear
+  356  sudo shutdown -h now
+  357  ls
+  358  cd Desktop
+  359  ls
+  360  cd work
+  361  ls
+  362  cd ...
+  363  ls
+  364  cd Documents
+  365  LS
+  366  git clone https://github.com/jannuary/yet-another-monochrome-icon-pack ~/.local/share/icons/yet-another-monochrome
+  367  cd ../Downloads
+  368  unzip YAMIS-Gruvbox.zip -d ~/.local/share/icons/\ngtk-update-icon-cache ~/.local/share/icons/YAMIS/
+  369  echo $XDG_SESSION_TYPE
+  370  \tsudo apt install picom\npicom &
+  371  mkdir -p ~/.config/autostart\ncat > ~/.config/autostart/picom.desktop << EOF\n[Desktop Entry]\nType=Application\nName=Picom\nExec=picom\nEOF
+  372  clear
+  373  ls
+  374  sudo apt install cava\n```\nThen run `cava` in a translucent terminal and position it on your desktop. It's not a widget but with a transparent terminal and the right colors it looks clean.\n\nTo make Cava use Gruvbox colors, create `~/.config/cava/config`:\n```\n[color]\ngradient = 1\ngradient_count = 2\ngradient_color_1 = '#d79921'\ngradient_color_2 = '#fe8019'
+  375  cava
+  376  mkdir -p ~/.config/cava\nnano ~/.config/cava/config\n```\n\nPaste this:\n```\n[color]\ngradient = 1\ngradient_count = 2\ngradient_color_1 = '#d79921'\ngradient_color_2 = '#fe8019'
+  377  cava
+  378  clear
+  379  ls
+  380  ls -l
+  381  ls
+  382  clear
+  383  ls
+  384  sudo shutdown -h now
+  385  ls
+  386  cd Desktop
+  387  ls
+  388  cd work
+  389  ls
+  390  myCode
+  391  ls
+  392  cd ...
+  393  saurabh/Downloads
+  394  ls
+  395  clear
+  396  ls
+  397  rm -rf 08-Flat-Remix-Miami-fullPanel-20250926
+  398  clear
+  399  ls
+  400  clear
+  401  ls
+  402  ls -l
+  403  clear
+  404  ls
+  405  ls -l
+  406  clear
+  407  zip -e .chat_ex1.zip
+  408  zip -e .chat_ex1.zip chat_ex1.zip
+  409  zip -e .chat_ex1.zip chat_ex_1.zip
+  410  clear
+  411  unzip .chat_ex1.zip -d ex1
+  412  clear
+  413  ls
+  414  zip -er ex_1.zip ex1
+  415  ls
+  416  clear
+  417  ls -l
+  418  rm -rf ex1 .chat_ex1.zip
+  419  clear
+  420  unzip ex_1.zip
+  421  clear
+  422  exit
+  423  ls
+  424  cd ..
+  425  ls
+  426  cd codecrafters-redis-go
+  427  ls
+  428  git push
+  429  git status
+  430  ls
+  431  cd Desktop
+  432  mkdir redis_c
+  433  cd redis_c
+  434  go mod init srbh117/myRedis_c
+  435  code .
+  436  ls
+  437  mkdir app && cd app
+  438  touch main.go
+  439  go run main.go
+  440  echo "PING" | localhost:42069
+  441  echo "PING" | nc localhost:42069
+  442  echo "PING" | nc localhost 42069
+  443  go run main.go
+  444  echo "PING" | nc localhost 42069
+  445  go run main.go
+  446  echo "PING" | nc localhost 42069
+  447  go run main.go
+  448  echo "PING" | nc localhost 42069
+  449  clear
+  450  echo "PING" | nc localhost 42069
+  451  go run .
+  452  echo "PING" | nc localhost 42069
+  453  go run .
+  454  echo "PING" | nc localhost 42069
+  455  go run .
+  456  clear
+  457  cd app
+  458  # Just mention the file when asking something\nclaude "whats wrong with this function" --file main.go\n\n# Or start a session in your project dir, I'll have access to all files\ncd your-redis-project\nclaude
+  459  claude
+  460  clear
+  461  npm install -g @anthropic/claude-code\nclaude
+  462  clear
+  463  sudo ^[[200~npm install -g @anthropic/claude-code
+  464  claude~
+  465  sudo npm i -g @anthropic/claude-code
+  466  npm
+  467  clear
+  468  npm i @anthropic/claude-code
+  469  clear
+  470  go run main.go
+  471  clear
+  472  go run main.go
+  473  go run ma
+  474  go run main.go
+  475  clear
+  476  echo "PING" | nc localhost 42069
+  477  echo "PINGnc -u localhost 42069\n
+  478  echo "PING" | nc -u localhost 42069\n
+  479  go run main.go
+  480  echo "PING" | nc localhost 42069
+  481  echo "PING" | nc -u localhost 42069\n
+  482  echo "PING" | nc localhost 42069
+  483  echo "PING" | nc -u localhost 42069\n
+  484  go run main.go
+  485  echo "PING" | nc -u localhost 42069\n
+  486  echo "PING" | nc localhost 42069
+  487  go run main.go
+  488  echo "PING" | nc localhost 42069
+  489  go run main.go
+  490  echo "PING" | nc localhost 42069
+  491  ls
+  492  cd app
+  493  go run main.go
+  494  ls
+  495  clear
+  496  ls
+  497  go run main.go
+  498  clear
+  499  go run main.go
+  500  echo "PING" | nc localhost 42069
+  501  cd ..
+  502  git add .
+  503  ls
+  504  clear
+  505  ls
+  506  cat .git
+  507  clear
+  508  git init .
+  509  clear
+  510  git status
+  511  git add .
+  512  ls
+  513  clear
+  514  ls
+  515  git commit -m "Part2Done"
+  516  clear
+  517  git checkout main
+  518  clear
+  519  git switch main
+  520  man git switch
+  521  git swithc main
+  522  git switch main
+  523  git checkout main
+  524  clear
+  525  ls
+  526  git remote add origin https://github.com/Srbh117/redis_c.git
+  527  ^[[200~git branch -M master~
+  528  git branch -M master
+  529  clear
+  530  git push -u origin master
+  531  clear
+  532  git branch -M main
+  533  ls
+  534  clear
+  535  git push -u origin 
+  536  git branch -M master
+  537  clear
+  538  git checkout main
+  539  git push origin master:main~
+  540  git push origin master:main
+  541  ➜  redis_c git:(master) git push origin master:main \nTo https://github.com/Srbh117/redis_c.git\n ! [rejected]        master -> main (fetch first)\nerror: failed to push some refs to 'https://github.com/Srbh117/redis_c.git'\nhint: Updates were rejected because the remote contains work that you do not\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.
+  542  git push origin master:main --force
+  543  sudo shutdown -0 now
+  544  sudo shutdown -h  now
+  545  ls
+  546  cd Documents
+  547  cd ...
+  548  ls
+  549  cd saurabh
+  550  ls
+  551  cd Desktop
+  552  ls
+  553  cd redis_c
+  554  ls
+  555  code .
+  556  ls
+  557  go run .
+  558  go build
+  559  clear
+  560  cd app
+  561  ls
+  562  go run .
+  563  go run main.go
+  564  ls
+  565  clear
+  566  go main.go
+  567  go run main.go
+  568  echo "^[[200~*2\r\n$4\r\nECHO\r\n$3\r\nhey\r\n"
+  569  clear
+  570  echo "*2\r\n$4\r\nECHO\r\n$3\r\nhey\r\n" | nc localhost 42069\n
+  571  go run main.go
+  572  clear
+  573  go run main.go
+  574  echo "PING\n" | nc localhost 42069
+  575  echo "BLEH\n" | nc localhost 42069
+  576  go run main.go
+  577  echo "BLEH\n" | nc localhost 42069
+  578  echo "DIAGO_UNMEHARA\n" | nc localhost 42069
+  579  clear
+  580  go run main.go
+  581  clear
+  582  echo "DIAGO_UNMEHARA\n" | nc localhost 42069
+  583  echo "doja_CAT\n" | nc localhost 42069
+  584  echo "MEFUCKUPLZZZZ" | nc localhost 42069
+  585  go help
+  586  clear
+  587  go install github.com/air-verse/air@latest\n
+  588  air
+  589  clear
+  590  cd ..
+  591  air
+  592  clear
+  593  go air
+  594  clear
+  595  air init 
+  596  clear
+  597  air\n
+  598  ^[[200~export PATH=$PATH:$(go env GOPATH)/bin
+  599  ~export PATH=$PATH:$(go env GOPATH)/bin\n
+  600  export PATH=$PATH:$(go env GOPATH)/bin\n
+  601  aior
+  602  air
+  603  clear
+  604  ls
+  605  cd tmp
+  606  ls
+  607  cd ..
+  608  cd air
+  609  l
+  610  cd app
+  611  ls
+  612  clear
+  613  air
+  614  echo "MEFUCKUPLZZZZ" | nc localhost 42069
+  615  echo "Are u sane?" |\n
+  616  echo "Are u sane?" |nc localhost 42069\n
+  617  echo "Are u single?" |nc localhost 42069\n
+  618  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  619  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nheyBaby\r\n" | nc localhost 42069\n
+  620  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nheyBaby be Mine\r\n" | nc localhost 42069\n
+  621  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  622  clear
+  623  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  624  air
+  625  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  626  air
+  627  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  628  air
+  629  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  630  air
+  631  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  632  ^[[200~# PING
+  633  printf "PING\n" | nc localhost 42069
+  634  # ECHO
+  635  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069
+  636  # ECHO with different arg
+  637  printf "*2\r\n\$4\r\nECHO\r\n\$5\r\nhello\r\n" | nc localhost 42069
+  638  ~printf "PING\n" | nc localhost 42069\n
+  639  printf "PING\n" | nc localhost 42069\n
+  640  air
+  641  printf "PING\n" | nc localhost 42069\n
+  642  air
+  643  printf "PING\n" | nc localhost 4206\n
+  644  printf "*2\r\n\$4\r\nECHO\r\n\$3\r\nhey\r\n" | nc localhost 42069\n
+  645  printf "*2\r\n\$4\r\nECHO\r\n\$5\r\nhello\r\n" | nc localhost 42069
+  646  printf "PING\n" | nc localhost 42069\n
+  647  printf "*2\r\n\$4\r\nECHO\r\n\$5\r\nhello\r\n" | nc localhost 42069\n
+  648  ls
+  649  clear
+  650  exit
+  651  sudo shutdown -h now
+  652  timedatectl
+  653  ls
+  654  cd Desktop
+  655  ls
+  656  cd redis_c
+  657  ls
+  658  code .
+  659  ls
+  660  cd Documents
+  661  ls
+  662  cd ../Desktop
+  663  ls
+  664  cd redis_c
+  665  ls
+  666  code .
+  667  ls
+  668  code .
+  669  y
+  670  sudo apt purge steam-launcher
+  671  clear
+  672  exit
+  673  clear
+  674  ls
+  675  cd Desktop
+  676  ls
+  677  cd redis_c
+  678  code .
+  679  exit
+  680  cd Desktop
+  681  ls
+  682  mywork
+  683  ls
+  684  clear
+  685  code .
+  686  exit
+  687  ls
+  688  mkdir REDisMine
+  689  cd REDisMine
+  690  ls
+  691  clear
+  692  cd ...
+  693  cd redis_c
+  694  code .
+  695  ls
+  696  cd app
+  697  ls
+  698  mkdir storageModule
+  699  cd sot
+  700  cd storageModule
+  701  ls
+  702  clear
+  703  ls
+  704  touch KVs.go
+  705  ls
+  706  cd ..
+  707  ls
+  708  mkdir parser
+  709  cd parser
+  710  ls
+  711  touch parser.go
+  712  ls
+  713  cd ..
+  714  cd storageModule
+  715  ls
+  716  clear
+  717  go run KVs.go
+  718  cd ...
+  719  ls
+  720  git add .
+  721  git status
+  722  clear
+  723  git commit -m "KV:Started. Just for the views"
+  724  git push
+  725  clear
+  726  man flatpak
+  727  flatpak install info.cemu.Cemu.flatpakref
+  728  clear
+  729  ls
+  730  mv keys.txt ~/.local/share/Cemu/keys.txt
+  731  ls
+  732  exit
+  733  steam
+  734  exit
+  735  code .
+  736  ;s
+  737  ls
+  738  code .
+  739  ls
+  740  cd parser
+  741  ls
+  742  clear
+  743  go run parser.go
+  744  go run K
+  745  ls
+  746  cd ../storageModule
+  747  clear
+  748  go run KVs.go
+  749  clear
+  750  go run KVs.go
+  751  clear
+  752  go run KVs.go
+  753  clear
+  754  go run KVs.go
+  755  clear
+  756  go run KVs.go
+  757  clear
+  758  go run ma
+  759  go run KVs.go
+  760  clear
+  761  go run KVs.go
+  762  clear
+  763  go run KVs.go
+  764  clear
+  765  go run KVs.go
+  766  ckear
+  767  clear
+  768  go run KVs.go
+  769  ls
+  770  cd Desktop
+  771  ls
+  772  cd redis_c
+  773  ls
+  774  code .
+  775  git checkout main
+  776  ls
+  777  git add .
+  778  git commit -m "KVS done"
+  779  git push
+  780  git checkout main
+  781  git checkout master
+  782  clear
+  783  ls
+  784  git checkout main
+  785  git merge master
+  786  git push origin main
+  787  git branch -d master
+  788  git push origin --delete master
+  789  exit
+  790  clear
+  791  ls
+  792  clear
+  793  go run main.go
+  794  ls
+  795  cd app
+  796  ls
+  797  clear
+  798  go run main.go
+  799  printf "^[[200~"*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n""
+  800  ~clear
+  801  clear
+  802  printf ""*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n" | ns localhost 42069\n
+  803  printf "*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n" | ns localhost 42069\n
+  804  ns
+  805  clear
+  806  printf "*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n" | nc localhost 42069\n
+  807  add 
+  808  air
+  809  air main.go
+  810  go install github.com/air-verse/air@latest
+  811  claer
+  812  clear
+  813  air
+  814  ^[[200~export PATH=$PATH:$(go env GOPATH)/bin
+  815  ~export PATH=$PATH:$(go env GOPATH)/bin\n
+  816  export PATH=$PATH:$(go env GOPATH)/bin\n
+  817  clear
+  818  air
+  819  printf "*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n" | nc localhost 42069\n
+  820  printf "*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n" | nc -C localhost 42069\n
+  821  clear
+  822  ls
+  823  cd tmp
+  824  l
+  825  cd ..
+  826  clear
+  827  cd par
+  828  cd parse
+  829  cd app/parser
+  830  go run parser.go
+  831  ls
+  832  claer
+  833  clear
+  834  go run parser.go
+  835  clear
+  836  ls
+  837  cd ..
+  838  ls
+  839  go run main.go
+  840  printf "*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n" | nc -C localhost 42069\n
+  841  userInputString := strings.ReplaceAll(string((*buff)[:n]), "\r\n", "\n")\nuserInputString = strings.ReplaceAll(userInputString, "\n", "\r\n")\n
+  842  printf "*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n" | nc localhost 42069\n
+  843  printf '*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n' | nc localhost 42069\n
+  844  clear
+  845  printf '*2\r\n$4\r\nECHO\r\n$5\r\nhello\r\n' | nc localhost 42069\n
+  846  clear
+  847  printf '*2\r\n$4\r\nECHO\r\n$5\r\nhelloSir\r\n' | nc localhost 42069\n
+  848  printf '*2\r\n$4\r\nECHO\r\n$8\r\nhelloSir\r\n' | nc localhost 42069\n
+  849  printf '*1\r\n$4\r\nPING\r\n' | nc localhost 42069\n
+  850  ls
+  851  git add .
+  852  git commit -m "Parser Changed, Way more hip now"
+  853  git push
+  854  clear
+  855  ls
+  856  # SET with PX\nprintf '*3\r\n$3\r\nSET\r\n$3\r\nfoo\r\n$3\r\nbar\r\n$2\r\nPX\r\n$4\r\n5000\r\n' | nc localhost 42069\n\n# GET\nprintf '*2\r\n$3\r\nGET\r\n$3\r\nfoo\r\n' | nc localhost 42069\n
+  857  printf '*5\r\n$3\r\nSET\r\n$3\r\nfoo\r\n$3\r\nbar\r\n$2\r\nPX\r\n$5\r\n50000\r\n' | nc localhost 42069\n
+  858  printf '*2\r\n$3\r\nGET\r\n$3\r\nfoo\r\n' | nc localhost 42069
+  859  clear
+  860  ls
+  861  git add .
+  862  git commit -m "Part 1:Done"
+  863  git push
+  864  clear
+  865  git add .
+  866  clear
+  867  git status
+  868  git commit -m "List Started"
+  869  git push
+  870  sudo shutdown -h 0
+  871  ls
+  872  cd Desktop
+  873  ls
+  874  cd redis_c
+  875  code .
+  876  air
+  877  ls
+  878  clear
+  879  ls -l
+  880  cd app
+  881  ls
+  882  clear
+  883  air
+  884  cat ~/bin/golang
+  885  clear
+  886  ls
+  887  history

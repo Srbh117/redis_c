@@ -18,6 +18,19 @@ func main() {
 	//
 	l, err := net.Listen("tcp", "0.0.0.0:6379")
 
+	conn, err := l.Accept()
+	if err != nil {
+		return
+	}
+
+	buff := make([]byte, 1024)
+	n, err := conn.Read(buff)
+	if err != nil {
+		return
+	}
+	if string(buff[:n]) == "PING" {
+		conn.Write([]byte("+PONG\r\n"))
+	}
 	if err != nil {
 		fmt.Println("Failed to bind to port 6379")
 		os.Exit(1)

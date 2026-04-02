@@ -28,6 +28,8 @@ func main() {
 	if err != nil {
 		return
 	}
+
+	fmt.Println("32: ", string(buff[:n]))
 	if string(buff[:n]) == "PING" {
 		conn.Write([]byte("+PONG\r\n"))
 	}

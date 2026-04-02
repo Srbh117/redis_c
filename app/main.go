@@ -30,9 +30,7 @@ func main() {
 	}
 
 	fmt.Println("32: ", string(buff[:n]))
-	if string(buff[:n]) == "PING" {
-		conn.Write([]byte("+PONG\r\n"))
-	}
+	conn.Write([]byte("+PONG\r\n"))
 	if err != nil {
 		fmt.Println("Failed to bind to port 6379")
 		os.Exit(1)

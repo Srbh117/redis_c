@@ -33,7 +33,7 @@ func main() {
 		if err != nil {
 			os.Exit(1)
 		}
-		curr_idx = bytes.Index(buff[curr_idx:], []byte(SEP))
+		curr_idx = bytes.Index(buff[curr_idx:], []byte(SEP)) + len(SEP)
 	}
 
 }

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"net"
 	"os"
@@ -19,21 +18,22 @@ func main() {
 	if err != nil {
 		return
 	}
-
-	conn, err := l.Accept()
-	if err != nil {
-		os.Exit(1)
-	}
-
-	buff := make([]byte, 1024)
-	conn.Read(buff)
-	curr_idx := 0
-	for bytes.Index(buff[curr_idx:], []byte(SEP)) != -1 {
-		_, err = conn.Write([]byte("+PONG\r\n"))
+	for {
+		conn, err := l.Accept()
 		if err != nil {
 			os.Exit(1)
 		}
-		curr_idx = bytes.Index(buff[curr_idx:], []byte(SEP)) + len(SEP)
+		conn.Write([]byte("+PONG\r\n"))
+		// buff := make([]byte, 1024)
+		// conn.Read(buff)
+		// curr_idx := 0
+		// for bytes.Index(buff[curr_idx:], []byte(SEP)) != -1 {
+		// 	_, err = conn.Write([]byte("+PONG\r\n"))
+		// 	if err != nil {
+		// 		os.Exit(1)
+		// 	}
+		// 	curr_idx = bytes.Index(buff[curr_idx:], []byte(SEP)) + len(SEP)
+		// }
 	}
 
 }

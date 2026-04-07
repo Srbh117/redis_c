@@ -63,7 +63,7 @@ func handleConnection(conn net.Conn) {
 			conn.Write([]byte(ConvertSingleString(parseString(receiver_str)[1])))
 		}
 		if receiver_arr[0] == "PING" {
-			conn.Write([]byte(ConvertSingleString("PONG")))
+			conn.Write([]byte("+PONG\r\n"))
 		}
 
 	}

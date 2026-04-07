@@ -23,7 +23,7 @@ type KV struct {
 var myStore KV
 
 func Set(parsedResp []string) error {
-	log.Println(parsedResp)
+	log.Println("Argument:", parsedResp)
 	if len(parsedResp) < 3 {
 		return fmt.Errorf("LENGTH OF PARSED RESP LESS THAN 3. NO KEY EXISTS")
 	}
@@ -31,6 +31,7 @@ func Set(parsedResp []string) error {
 	if len(parsedResp[1]) == 0 || len(parsedResp[2]) == 0 {
 		return fmt.Errorf("LENGTH OF Provided KEY | VALUE IS 0")
 	}
+
 	myStore.store[parsedResp[1]] = parsedResp[2]
 	return nil
 }

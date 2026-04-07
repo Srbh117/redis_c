@@ -33,6 +33,8 @@ func Set(parsedResp []string) error {
 	}
 
 	myStore.store[parsedResp[1]] = parsedResp[2]
+
+	log.Println("Programm GOOD")
 	return nil
 }
 

@@ -13,7 +13,15 @@ var SEP = "\n"
 
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
-	conn.Write([]byte("+PONG\r\n"))
+	buff := make([]byte, 1024)
+	for {
+		_, err := conn.Read(buff)
+		if err != nil {
+			return
+		}
+
+		conn.Write([]byte("+PONG\r\n"))
+	}
 }
 
 func main() {

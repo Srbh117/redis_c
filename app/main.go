@@ -12,7 +12,7 @@ import (
 var _ = net.Listen
 var _ = os.Exit
 
-var SEP = "\n"
+var SEP = "\r\n"
 
 func parseString(resp string) []string {
 	//*2\r\n$4\r\nECHO\r\n$3\r\nhey\r\n
@@ -58,11 +58,14 @@ func handleConnection(conn net.Conn) {
 		}
 
 		receiver_str := string(buff[:n])
+		receiver_arr := parseString(receiver_str)
 		if parseString(receiver_str)[0] == "ECHO" {
 			conn.Write([]byte(ConvertSingleString(parseString(receiver_str)[1])))
 		}
+		if receiver_arr[0] == "PING" {
+			conn.Write([]byte(ConvertSingleString("PONG")))
+		}
 
-		conn.Write([]byte("+PONG\r\n"))
 	}
 }
 

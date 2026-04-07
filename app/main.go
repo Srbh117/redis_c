@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net"
 	"os"
+	"strconv"
+	"strings"
 )
 
 var _ = net.Listen
@@ -11,13 +14,52 @@ var _ = os.Exit
 
 var SEP = "\n"
 
+func parseString(resp string) []string {
+	//*2\r\n$4\r\nECHO\r\n$3\r\nhey\r\n
+	myArr := strings.Split(resp, SEP)
+	ans := []string{}
+	for i := 2; i < len(myArr); i += 2 {
+		ans = append(ans, strings.TrimSpace(myArr[i]))
+	}
+	return ans
+
+	//[ECHO,HEY]
+}
+
+func ConvertSingleString(word string) string {
+	lenStr := "$" + strconv.Itoa(len(word)) + SEP + word + SEP
+	return lenStr
+
+}
+
+func CreateString(resp []string) string {
+	ans := ""
+	lenArr := "*" + strconv.Itoa(len(resp))
+	ans += lenArr
+	ans += SEP
+	for i := 0; i < len(resp); i++ {
+		lenStr := "$" + strconv.Itoa(len(resp[i])) + SEP + resp[i] + SEP
+		ans += lenStr
+	}
+
+	return ans
+}
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
 	buff := make([]byte, 1024)
 	for {
-		_, err := conn.Read(buff)
-		if err != nil {
+		n, err := conn.Read(buff)
+		if err == io.EOF {
 			return
+		}
+		if err != nil {
+			fmt.Errorf(err.Error())
+			return
+		}
+
+		receiver_str := string(buff[:n])
+		if parseString(receiver_str)[0] == "ECHO" {
+			conn.Write([]byte(ConvertSingleString(parseString(receiver_str)[1])))
 		}
 
 		conn.Write([]byte("+PONG\r\n"))
@@ -38,5 +80,13 @@ func main() {
 		}
 		go handleConnection(conn)
 	}
+
+	// arr := parseString("*2\r\n$4\r\nECHO\r\n$3\r\nhey\r\n")
+
+	// for k, v := range arr {
+	// 	fmt.Println(k, v, len(v))
+	// }
+	// str := CreateString(arr)
+	// fmt.Println(str)
 
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net"
 	"os"
 	"strconv"
@@ -22,6 +23,7 @@ type KV struct {
 var myStore KV
 
 func Set(parsedResp []string) error {
+	log.Println(parsedResp)
 	if len(parsedResp) < 3 {
 		return fmt.Errorf("LENGTH OF PARSED RESP LESS THAN 3. NO KEY EXISTS")
 	}

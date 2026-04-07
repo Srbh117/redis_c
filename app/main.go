@@ -12,6 +12,7 @@ var _ = os.Exit
 var SEP = "\n"
 
 func handleConnection(conn net.Conn) {
+	defer conn.Close()
 	conn.Write([]byte("+PONG\r\n"))
 }
 

@@ -13,6 +13,29 @@ var _ = net.Listen
 var _ = os.Exit
 
 var SEP = "\r\n"
+var NULL_STRING = "$-1\r\n"
+
+type KV struct {
+	store map[string]any
+}
+
+var myStore KV
+
+func Set(parsedResp []string) error {
+	if len(parsedResp) < 3 {
+		return fmt.Errorf("LENGTH OF PARSED RESP LESS THAN 3. NO KEY EXISTS")
+	}
+	myStore.store[parsedResp[1]] = parsedResp[2]
+	return nil
+}
+
+func GET(key string) (any, error) {
+	v, ok := myStore.store[key]
+	if ok == false {
+		return "", fmt.Errorf("KEY DOESN't EXIST")
+	}
+	return v, nil
+}
 
 func parseString(resp string) []string {
 	//*2\r\n$4\r\nECHO\r\n$3\r\nhey\r\n
@@ -64,6 +87,26 @@ func handleConnection(conn net.Conn) {
 		}
 		if receiver_arr[0] == "PING" {
 			conn.Write([]byte("+PONG\r\n"))
+		}
+
+		if receiver_arr[0] == "GET" {
+			val, err := GET(receiver_arr[1])
+			if err != nil {
+				conn.Write([]byte(NULL_STRING))
+			}
+			stringVal, ok := val.(string)
+			if ok != true {
+				conn.Write([]byte(NULL_STRING))
+			}
+			conn.Write([]byte(ConvertSingleString(stringVal)))
+		}
+
+		if receiver_arr[0] == "SET" {
+			err := Set(receiver_arr)
+			if err != nil {
+				conn.Write([]byte(NULL_STRING))
+			}
+			conn.Write([]byte("OK"))
 		}
 
 	}

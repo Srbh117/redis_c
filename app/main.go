@@ -31,9 +31,7 @@ func Set(parsedResp []string) error {
 	if len(parsedResp[1]) == 0 || len(parsedResp[2]) == 0 {
 		return fmt.Errorf("LENGTH OF Provided KEY | VALUE IS 0")
 	}
-	if ok := myStore.store[parsedResp[1]]; !ok {
 
-	}
 	myStore.store[parsedResp[1]] = parsedResp[2]
 
 	log.Println("Programm GOOD")

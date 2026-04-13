@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -8,6 +9,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 var _ = net.Listen
@@ -16,13 +18,28 @@ var _ = os.Exit
 var SEP = "\r\n"
 var NULL_STRING = "$-1\r\n"
 
+var KEY_EXPIRED = errors.New("Key expired")
+
+/*
+	Store ->
+
+	Saves all keys. Per KEY -> VALUE AND AN EXPIRY (THIS GOOD). IF EXPIRY IS NIL THEN INFI, ELSE TILL EXPIRY.
+	WHILE FETCH IF EXPIRY > TIME.NOW() THEN DELETE KEY.
+
+*/
+
 type KV struct {
-	store map[string]any
+	store map[string]Entry
+}
+
+type Entry struct {
+	value  string
+	expiry *time.Time
 }
 
 func NewKV() KV {
 	return KV{
-		store: make(map[string]any),
+		store: make(map[string]Entry),
 	}
 }
 
@@ -38,13 +55,37 @@ func Set(parsedResp []string) error {
 		return fmt.Errorf("LENGTH OF Provided KEY | VALUE IS 0")
 	}
 
+	var timeToExpire *time.Time
+
+	if len(parsedResp) <= 3 {
+		timeToExpire = nil
+	}
+	if parsedResp[4] != "EX" || parsedResp[4] != "PX" {
+		timeToExpire = nil
+	}
+
+	timeDur, err := strconv.Atoi(parsedResp[5])
+	if err != nil {
+		return fmt.Errorf(err.Error())
+	}
+
+	var dur time.Duration
+	if parsedResp[4] == "EX" {
+		dur = time.Second
+	} else {
+		dur = time.Millisecond
+	}
+	t := time.Now().Add(time.Duration(timeDur) * dur)
+	timeToExpire = &t
 	_, ok := myStore.store[parsedResp[1]]
 	if ok == false {
-		myStore.store[parsedResp[1]] = parsedResp[2]
+		myStore.store[parsedResp[1]] = Entry{
+			value:  parsedResp[2],
+			expiry: timeToExpire,
+		}
 	}
-	myStore.store[parsedResp[1]] = parsedResp[2]
+	myStore.store[parsedResp[1]] = Entry{value: parsedResp[2], expiry: timeToExpire}
 
-	log.Println("Programm GOOD")
 	return nil
 }
 
@@ -56,7 +97,16 @@ func GET(key string) (any, error) {
 	if ok == false {
 		return "", fmt.Errorf("KEY DOESN't EXIST")
 	}
-	return v, nil
+	if v.expiry == nil {
+		return v.value, nil
+	}
+
+	if v.expiry.After(time.Now()) == true {
+		delete(myStore.store, key)
+		return "", KEY_EXPIRED
+	}
+
+	return v.value, nil
 }
 
 func parseString(resp string) []string {
@@ -116,6 +166,10 @@ func handleConnection(conn net.Conn) {
 			if err != nil {
 				conn.Write([]byte(NULL_STRING))
 			}
+
+			if err == KEY_EXPIRED {
+				conn.Write([]byte(NULL_STRING))
+			}
 			stringVal, ok := val.(string)
 			if ok != true {
 				conn.Write([]byte(NULL_STRING))
@@ -155,6 +209,6 @@ func main() {
 	// 	fmt.Println(k, v, len(v))
 	// }
 	// str := CreateString(arr)
-	// fmt.Println(str)
 
+	// fmt.Println(str)
 }

@@ -128,7 +128,7 @@ func handleConnection(conn net.Conn) {
 			if err != nil {
 				conn.Write([]byte(NULL_STRING))
 			}
-			conn.Write([]byte(ConvertSingleString("OK")))
+			conn.Write([]byte("OK"))
 		}
 
 	}

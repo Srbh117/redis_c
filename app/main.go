@@ -155,19 +155,29 @@ func handleConnection(conn net.Conn) {
 		}
 
 		if receiver_arr[0] == "GET" {
-			val, err := GET(receiver_arr[1])
-			if err != nil {
-				conn.Write([]byte("$-1\r\n"))
+			// Validate input
+			if len(receiver_arr) < 2 {
+				conn.Write([]byte(NULL_STRING))
+				continue
 			}
 
-			if err == KEY_EXPIRED {
-				conn.Write([]byte("$-1\r\n"))
+			val, err := GET(receiver_arr[1])
+			if err != nil {
+				// Covers: key not found, expired, invalid
+				conn.Write([]byte(NULL_STRING))
+				continue
 			}
-			stringVal, ok := val.(string)
-			if ok != true {
-				conn.Write([]byte("$-1\r\n"))
+
+			// Safe type assertion (you always store string anyway)
+			strVal, ok := val.(string)
+			if !ok {
+				conn.Write([]byte(NULL_STRING))
+				continue
 			}
-			conn.Write([]byte(ConvertSingleString(stringVal)))
+
+			// Success case
+			conn.Write([]byte(ConvertSingleString(strVal)))
+			continue
 		}
 
 		if receiver_arr[0] == "SET" {

@@ -173,8 +173,7 @@ func handleConnection(conn net.Conn) {
 			}
 			stringVal, ok := val.(string)
 			if ok != true {
-
-				conn.Write([]byte(NULL_STRING))
+				conn.Write([]byte("$-1\r\n"))
 			}
 			conn.Write([]byte(ConvertSingleString(stringVal)))
 		}

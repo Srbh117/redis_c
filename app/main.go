@@ -49,8 +49,10 @@ func Set(parsedResp []string) error {
 
 	var timeToExpire *time.Time
 
-	if len(parsedResp) <= 3 {
+	if len(parsedResp) == 3 {
 		timeToExpire = nil
+		myStore.store[parsedResp[1]] = Entry{value: parsedResp[2], expiry: nil}
+		return nil
 	}
 	if parsedResp[3] != "EX" && parsedResp[3] != "PX" {
 		timeToExpire = nil

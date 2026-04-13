@@ -163,7 +163,6 @@ func handleConnection(conn net.Conn) {
 
 			val, err := GET(receiver_arr[1])
 			if err != nil {
-				// Covers: key not found, expired, invalid
 				conn.Write([]byte(NULL_STRING))
 				continue
 			}

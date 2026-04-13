@@ -52,7 +52,7 @@ func Set(parsedResp []string) error {
 	if len(parsedResp) <= 3 {
 		timeToExpire = nil
 	}
-	if parsedResp[3] != "EX" || parsedResp[3] != "PX" {
+	if parsedResp[3] != "EX" && parsedResp[3] != "PX" {
 		timeToExpire = nil
 	}
 

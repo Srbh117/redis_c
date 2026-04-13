@@ -165,14 +165,15 @@ func handleConnection(conn net.Conn) {
 		if receiver_arr[0] == "GET" {
 			val, err := GET(receiver_arr[1])
 			if err != nil {
-				conn.Write([]byte(NULL_STRING))
+				conn.Write([]byte("$-1\r\n"))
 			}
 
 			if err == KEY_EXPIRED {
-				conn.Write([]byte(NULL_STRING))
+				conn.Write([]byte("$-1\r\n"))
 			}
 			stringVal, ok := val.(string)
 			if ok != true {
+
 				conn.Write([]byte(NULL_STRING))
 			}
 			conn.Write([]byte(ConvertSingleString(stringVal)))

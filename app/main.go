@@ -70,7 +70,7 @@ func Set(parsedResp []string) error {
 	}
 
 	var dur time.Duration
-	if parsedResp[4] == "EX" {
+	if parsedResp[3] == "EX" {
 		dur = time.Second
 	} else {
 		dur = time.Millisecond
@@ -180,7 +180,7 @@ func handleConnection(conn net.Conn) {
 		if receiver_arr[0] == "SET" {
 			err := Set(receiver_arr)
 			if err != nil {
-				conn.Write([]byte(NULL_STRING))
+				conn.Write([]byte("$-1\r\n"))
 			}
 			conn.Write([]byte("+OK\r\n"))
 		}

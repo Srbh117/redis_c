@@ -20,7 +20,13 @@ type KV struct {
 	store map[string]any
 }
 
-var myStore KV
+func NewKV() KV {
+	return KV{
+		store: make(map[string]any),
+	}
+}
+
+var myStore KV = NewKV()
 
 func Set(parsedResp []string) error {
 	log.Println("Argument:", parsedResp)

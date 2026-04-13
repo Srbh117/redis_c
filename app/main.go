@@ -20,14 +20,6 @@ var NULL_STRING = "$-1\r\n"
 
 var KEY_EXPIRED = errors.New("Key expired")
 
-/*
-	Store ->
-
-	Saves all keys. Per KEY -> VALUE AND AN EXPIRY (THIS GOOD). IF EXPIRY IS NIL THEN INFI, ELSE TILL EXPIRY.
-	WHILE FETCH IF EXPIRY > TIME.NOW() THEN DELETE KEY.
-
-*/
-
 type KV struct {
 	store map[string]Entry
 }

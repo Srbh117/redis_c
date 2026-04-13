@@ -101,7 +101,7 @@ func GET(key string) (any, error) {
 		return v.value, nil
 	}
 
-	if v.expiry.After(time.Now()) == true {
+	if v.expiry.After(time.Now()) == false {
 		delete(myStore.store, key)
 		return "", KEY_EXPIRED
 	}

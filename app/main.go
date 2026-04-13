@@ -60,11 +60,11 @@ func Set(parsedResp []string) error {
 	if len(parsedResp) <= 3 {
 		timeToExpire = nil
 	}
-	if parsedResp[4] != "EX" || parsedResp[4] != "PX" {
+	if parsedResp[3] != "EX" || parsedResp[3] != "PX" {
 		timeToExpire = nil
 	}
 
-	timeDur, err := strconv.Atoi(parsedResp[5])
+	timeDur, err := strconv.Atoi(parsedResp[4])
 	if err != nil {
 		return fmt.Errorf(err.Error())
 	}

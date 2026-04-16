@@ -1,6 +1,9 @@
 package util
 
-import "slices"
+import (
+	"log"
+	"slices"
+)
 
 var store map[string][]string = make(map[string][]string)
 
@@ -19,7 +22,9 @@ func abs(x int) int {
 func LPUSH(key string, val []string) int {
 	flag := val
 	slices.Reverse(flag)
+	log.Println(flag)
 	store[key] = append(store[key], flag...)
+	log.Println(key, store[key])
 	return len(store[key])
 
 }

@@ -17,8 +17,9 @@ func abs(x int) int {
 }
 
 func LPUSH(key string, val []string) int {
-	slices.Reverse(val)
-	store[key] = append(store[key], val...)
+	flag := val
+	slices.Reverse(flag)
+	store[key] = append(store[key], flag...)
 	return len(store[key])
 
 }

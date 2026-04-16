@@ -194,11 +194,7 @@ func handleConnection(conn net.Conn) {
 
 		if receiver_arr[0] == "RPUSH" {
 			log.Println(receiver_arr)
-			val := 0
-			for i := 1; i < len(receiver_arr); i++ {
-				val = util.RPUSH(receiver_arr[i])
-			}
-
+			val := util.RPUSH(receiver_arr[1], receiver_arr[2])
 			conn.Write([]byte(util.ParseInt(val)))
 		}
 

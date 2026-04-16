@@ -1,12 +1,8 @@
 package util
 
-type LIST struct {
-	list []any
-}
+var store map[string][]string
 
-var l LIST
-
-func RPUSH(val string) int {
-	l.list = append(l.list, val)
-	return len(l.list)
+func RPUSH(key string, val string) int {
+	store[key] = append(store[key], val)
+	return len(store[key])
 }

@@ -222,11 +222,20 @@ func handleConnection(conn net.Conn) {
 		}
 		if receiver_arr[0] == "LPOP" {
 
-			r, err := strconv.Atoi(receiver_arr[2])
-			if err != nil {
-				conn.Write([]byte(util.ParseList([]string{})))
+			if len(receiver_arr) == 2 {
+				str := util.LPOP(receiver_arr[1])
+				if len(str) == 0 {
+					conn.Write([]byte(util.ReturnEmptyString()))
+				} else {
+					conn.Write([]byte(ConvertSingleString(str)))
+				}
 			} else {
-				conn.Write([]byte(util.ParseList(util.LPOP(receiver_arr[1], r))))
+				r, err := strconv.Atoi(receiver_arr[2])
+				if err != nil {
+					conn.Write([]byte(util.ParseList([]string{})))
+				} else {
+					conn.Write([]byte(util.ParseList(util.LPOP_Ranged(receiver_arr[1], r))))
+				}
 			}
 		}
 

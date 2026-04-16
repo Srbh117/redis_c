@@ -31,7 +31,18 @@ func LLEN(key string) int {
 	return len(val)
 }
 
-func LPOP(key string, rangeVal int) []string {
+func LPOP(key string) string {
+	v, ok := store[key]
+	if ok == false || len(v) == 0 {
+		return ""
+	}
+
+	f := v[0]
+	store[key] = store[key][1:]
+	return f
+}
+
+func LPOP_Ranged(key string, rangeVal int) []string {
 	v, ok := store[key]
 	if ok == false || len(v) == 0 {
 		return []string{}

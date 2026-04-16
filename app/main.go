@@ -10,6 +10,9 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/codecrafters-io/redis-starter-go/util"
+	_ "github.com/codecrafters-io/redis-starter-go/util"
 )
 
 var _ = net.Listen
@@ -189,6 +192,13 @@ func handleConnection(conn net.Conn) {
 			conn.Write([]byte("+OK\r\n"))
 		}
 
+		if receiver_arr[0] == "RPUSH" {
+			log.Println(receiver_arr)
+			val := util.RPUSH(receiver_arr[2])
+
+			conn.Write([]byte(util.ParseInt(val)))
+		}
+
 	}
 }
 
@@ -207,12 +217,4 @@ func main() {
 		go handleConnection(conn)
 	}
 
-	// arr := parseString("*2\r\n$4\r\nECHO\r\n$3\r\nhey\r\n")
-
-	// for k, v := range arr {
-	// 	fmt.Println(k, v, len(v))
-	// }
-	// str := CreateString(arr)
-
-	// fmt.Println(str)
 }

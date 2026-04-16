@@ -31,16 +31,19 @@ func LLEN(key string) int {
 	return len(val)
 }
 
-func LPOP(key string) string {
+func LPOP(key string, rangeVal int) []string {
 	v, ok := store[key]
 	if ok == false || len(v) == 0 {
-		return ""
+		return []string{}
 	}
-
-	f := v[0]
-	store[key] = store[key][1:]
+	if rangeVal > len(store[key]) {
+		f := store[key]
+		store[key] = []string{}
+		return f
+	}
+	f := store[key][:rangeVal]
+	store[key] = store[key][rangeVal:]
 	return f
-
 }
 
 func LRANGE(key string, start, stop int) string {

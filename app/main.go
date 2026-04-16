@@ -220,6 +220,14 @@ func handleConnection(conn net.Conn) {
 			val := util.LLEN(receiver_arr[1])
 			conn.Write([]byte(util.ParseInt(val)))
 		}
+		if receiver_arr[0] == "LPOP" {
+			val := util.LPOP(receiver_arr[1])
+			if val == "" {
+				conn.Write([]byte(util.ReturnEmptyString()))
+			} else {
+				conn.Write([]byte(ConvertSingleString(val)))
+			}
+		}
 
 	}
 }

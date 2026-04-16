@@ -216,6 +216,10 @@ func handleConnection(conn net.Conn) {
 			Arr := util.LRANGE(receiver_arr[1], start, end)
 			conn.Write([]byte(Arr))
 		}
+		if receiver_arr[0] == "LLEN" {
+			val := util.LLEN(receiver_arr[1])
+			conn.Write([]byte(util.ParseInt(val)))
+		}
 
 	}
 }

@@ -23,6 +23,14 @@ func LPUSH(key string, val []string) int {
 	return len(store[key])
 }
 
+func LLEN(key string) int {
+	val, ok := store[key]
+	if ok == false {
+		return 0
+	}
+	return len(val)
+}
+
 func LRANGE(key string, start, stop int) string {
 	val, ok := store[key]
 	if ok != true {

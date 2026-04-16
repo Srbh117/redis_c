@@ -193,9 +193,23 @@ func handleConnection(conn net.Conn) {
 		}
 
 		if receiver_arr[0] == "RPUSH" {
-			log.Println(receiver_arr)
 			val := util.RPUSH(receiver_arr[1], receiver_arr[2:])
 			conn.Write([]byte(util.ParseInt(val)))
+		}
+
+		if receiver_arr[0] == "LRANGE" {
+			start, err := strconv.Atoi(receiver_arr[2])
+			if err != nil {
+				conn.Write([]byte(util.ReturnEmptyString()))
+				continue
+			}
+			end, err := strconv.Atoi(receiver_arr[3])
+			if err != nil {
+				conn.Write([]byte(util.ReturnEmptyString()))
+				continue
+			}
+			Arr := util.LRANGE(receiver_arr[1], start, end)
+			conn.Write([]byte(Arr))
 		}
 
 	}

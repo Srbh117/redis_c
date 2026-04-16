@@ -1,5 +1,7 @@
 package util
 
+import "slices"
+
 var store map[string][]string = make(map[string][]string)
 
 func RPUSH(key string, val []string) int {
@@ -14,10 +16,17 @@ func abs(x int) int {
 	return x
 }
 
+func LPUSH(key string, val []string) int {
+	slices.Reverse(val)
+	store[key] = append(store[key], val...)
+	return len(store[key])
+
+}
+
 func LRANGE(key string, start, stop int) string {
 	val, ok := store[key]
 	if ok != true {
-		return ParseList([]string{})
+		return ReturnEmptyString()
 	}
 
 	if start < 0 {
@@ -36,7 +45,7 @@ func LRANGE(key string, start, stop int) string {
 	}
 
 	if start >= len(val) {
-		return ParseList([]string{})
+		return ReturnEmptyString()
 	}
 	if stop >= len(val) {
 		stop = len(val) - 1

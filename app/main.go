@@ -197,6 +197,11 @@ func handleConnection(conn net.Conn) {
 			conn.Write([]byte(util.ParseInt(val)))
 		}
 
+		if receiver_arr[0] == "LPUSH" {
+			val := util.LPUSH(receiver_arr[1], receiver_arr[2:])
+			conn.Write([]byte(util.ParseInt(val)))
+		}
+
 		if receiver_arr[0] == "LRANGE" {
 			start, err := strconv.Atoi(receiver_arr[2])
 			if err != nil {

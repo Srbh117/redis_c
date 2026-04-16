@@ -221,8 +221,13 @@ func handleConnection(conn net.Conn) {
 			conn.Write([]byte(util.ParseInt(val)))
 		}
 		if receiver_arr[0] == "LPOP" {
-			val := util.LPOP(receiver_arr[1])
-			conn.Write([]byte(util.ParseList(val)))
+
+			r, err := strconv.Atoi(receiver_arr[2])
+			if err != nil {
+				conn.Write([]byte(util.ParseList([]string{})))
+			} else {
+				conn.Write([]byte(util.ParseList(util.LPOP(receiver_arr[1], r))))
+			}
 		}
 
 	}

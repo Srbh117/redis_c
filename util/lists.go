@@ -23,14 +23,16 @@ func LRANGE(key string, start, stop int) string {
 	if start < 0 {
 		if abs(start) > len(store[key]) {
 			start = 0
+		} else {
+			start += len(store[key])
 		}
-		start += len(store[key])
 	}
 	if stop < 0 {
 		if abs(stop) > len(store[key]) {
 			stop = 0
+		} else {
+			stop += len(store[key])
 		}
-		stop += len(store[key])
 	}
 
 	if start >= len(val) {

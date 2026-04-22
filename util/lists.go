@@ -9,6 +9,26 @@ func RPUSH(key string, val []string) int {
 	return len(store[key])
 }
 
+func BLPOP(key string, time int) string {
+	if time != 0 {
+		return "ASS"
+	} else {
+	loop:
+		for {
+			_, ok := store[key]
+			if ok == false {
+				goto loop
+			}
+			if ok == true && len(store[key]) == 0 {
+				goto loop
+			}
+			val := LPOP(key)
+			return ParseList([]string{key, val})
+		}
+	}
+
+}
+
 func abs(x int) int {
 	if x < 0 {
 		return x * -1

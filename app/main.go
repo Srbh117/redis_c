@@ -15,11 +15,15 @@ import (
 	_ "github.com/codecrafters-io/redis-starter-go/util"
 )
 
-var _ = net.Listen
-var _ = os.Exit
+var (
+	_ = net.Listen
+	_ = os.Exit
+)
 
-var SEP = "\r\n"
-var NULL_STRING = "$-1\r\n"
+var (
+	SEP         = "\r\n"
+	NULL_STRING = "$-1\r\n"
+)
 
 var KEY_EXPIRED = errors.New("Key expired")
 
@@ -104,7 +108,6 @@ func GET(key string) (any, error) {
 	} else {
 		return v.value, nil
 	}
-
 }
 
 func parseString(resp string) []string {
@@ -122,7 +125,6 @@ func parseString(resp string) []string {
 func ConvertSingleString(word string) string {
 	lenStr := "$" + strconv.Itoa(len(word)) + SEP + word + SEP
 	return lenStr
-
 }
 
 func CreateString(resp []string) string {
@@ -137,6 +139,7 @@ func CreateString(resp []string) string {
 
 	return ans
 }
+
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
 	buff := make([]byte, 1024)
@@ -221,7 +224,6 @@ func handleConnection(conn net.Conn) {
 			conn.Write([]byte(util.ParseInt(val)))
 		}
 		if receiver_arr[0] == "LPOP" {
-
 			if len(receiver_arr) == 2 {
 				str := util.LPOP(receiver_arr[1])
 				if len(str) == 0 {
@@ -243,6 +245,8 @@ func handleConnection(conn net.Conn) {
 }
 
 func main() {
+	fmt.Println(util.Bar(16, 111, 50, 0))
+
 	fmt.Println("Logs from your program will appear here!")
 
 	l, err := net.Listen("tcp", "0.0.0.0:6379")
@@ -256,5 +260,4 @@ func main() {
 		}
 		go handleConnection(conn)
 	}
-
 }

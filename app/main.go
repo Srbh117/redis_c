@@ -223,6 +223,17 @@ func handleConnection(conn net.Conn) {
 			val := util.LLEN(receiver_arr[1])
 			conn.Write([]byte(util.ParseInt(val)))
 		}
+		if receiver_arr[0] == "BLPOP" {
+			time, err := strconv.Atoi(receiver_arr[2])
+			if err != nil {
+				fmt.Errorf("Error Parsing TIME For BLPOP")
+				continue
+			}
+			val := util.BLPOP(receiver_arr[1], time)
+			conn.Write([]byte(val))
+
+		}
+
 		if receiver_arr[0] == "LPOP" {
 			if len(receiver_arr) == 2 {
 				str := util.LPOP(receiver_arr[1])

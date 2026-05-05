@@ -9,7 +9,11 @@ func RPUSH(key string, val []string) int {
 	return len(store[key])
 }
 
+// If List Is empty, the command blocks until A new element is added to the tlist
+// Or timeout is reached. If timeout is 0 the command is blocked indefinitely
+
 func BLPOP(key string, time int) string {
+	ch := make(chan interface{})
 	if time != 0 {
 		return "ASS"
 	} else {
